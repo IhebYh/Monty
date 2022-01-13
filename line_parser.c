@@ -19,7 +19,8 @@ int line_parser(char *line)
 		return (EXIT_FAILURE);
 
 	inventory->input[0] = strtok(line, delim);
-
+	if (inventory->input[0][0] == '#')
+		return (EXIT_FAILURE);
 	inventory->input[1] = strtok(NULL, delim);
 
 	return (EXIT_SUCCESS);
