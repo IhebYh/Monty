@@ -47,6 +47,7 @@ void (*monty_cmd_handler(void))(stack_t **stack, unsigned int line_number)
 	instruction_t *i;
 	instruction_t ins[] = {
 		{"push", _push}, {"pall", _pall},
+		{"pint",_pint},
 		{NULL, NULL}
 	};
 
