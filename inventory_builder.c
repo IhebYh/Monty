@@ -19,7 +19,7 @@ int inventory_builder(void)
 
 	inventory->stack = NULL;
 	inventory->line = NULL;
-	inventory->linenum = 0;
+	inventory->linenmbr = 0;
 	inventory->order = 1;
 
 	return (EXIT_SUCCESS);

@@ -2,13 +2,12 @@
 #define MONTY_H
 /* ###### LIBRARIES ####### */
 
+#define  _GNU_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-#include <sys/types.h>
 #include <ctype.h>
-#include <limits.h>
 
 /* ###### MACROS ####### */
 
@@ -83,12 +82,12 @@ typedef struct inventory_s
 /* ###### GLOBAL VARS ####### */
 
 extern inventory_t *inventory;
+inventory_t *inventory;
 
 /* ###### FUNCTIONS ####### */
 
 /* ----- HANDLERS ----- */
-
-void error_handler(char *error_msg);
+void error_handler(int e);
 void (*monty_cmd_handler(void))(stack_t **stack, unsigned int line_number);
 int areDigits(char *num);
 
@@ -96,9 +95,16 @@ int areDigits(char *num);
 int inventory_builder(void);
 int line_parser(char *line);
 
-/* ------ MEMORY MANAGMENT ----*/
-
+/* ------ MEMORY MANAGMENT ---- */
 void free_all(void);
 void free_stack(void);
+
+/* ----- NODE ADDING ------- */
+void _fifo(stack_t **stack, stack_t *new_stack);
+void _lifo(stack_t **stack, stack_t *new_stack);
+
+/* --------- OPCODES ------*/
+void _push(stack_t **stack, unsigned int line_number);
+void _pall(stack_t **stack, unsigned int line_number);
 
 #endif

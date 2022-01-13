@@ -10,6 +10,7 @@ int line_parser(char *line)
 	int len, i;
 
 	delim = "\n ";
+    s = inventory->line;
 	len = strlen(s);
 
 	for (i = 0; s[i] == delim[0] || s[i] == delim[1]; i++)

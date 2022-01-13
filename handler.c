@@ -19,13 +19,13 @@ void error_handler(int e)
 	};
 
 	if (inventory)
-		n = inventory->linenum;
+		n = inventory->linenmbr;
 
 	if (e <= 1)
 		dprintf(STDOUT_FILENO, "%s", errors[e]);
 	else if (e == 2)
 		dprintf(STDOUT_FILENO, "Error: Can't open file %s\n",
-				inventory->filename);
+				inventory->fname);
 	else if (e == 3)
 		dprintf(STDOUT_FILENO, "L%u: unknown instruction %s\n", n,
 				inventory->input[0]);
@@ -47,11 +47,6 @@ void (*monty_cmd_handler(void))(stack_t **stack, unsigned int line_number)
 	instruction_t *i;
 	instruction_t ins[] = {
 		{"push", _push}, {"pall", _pall},
-		{"pint", _pint}, {"pop", _pop}, {"swap", _swap},
-		{"add", _add}, {"nop", _nop}, {"sub", _sub},
-		{"div", _div}, {"mul", _mul}, {"mod", _mod},
-		{"pchar", _pchar}, {"pstr", _pstr}, {"rotl", _rotl},
-		{"rotr", _rotr}, {"stack", _stack}, {"queue", _queue},
 		{NULL, NULL}
 	};
 
