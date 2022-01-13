@@ -25,7 +25,7 @@
 #define ERROR_PINT 5
 #define ERROR_POP 6
 #define ERROR_SWAP 7
-
+#define ERROR_ADD 8
 /* ###### STRUCTS ####### */
 
 /**
@@ -109,5 +109,6 @@ void _pall(stack_t **stack, unsigned int line_number);
 void _pint (stack_t **stack, unsigned int line_number);
 void _pop(stack_t **stack, unsigned int line_number);
 void _swap(stack_t **stack, unsigned int line_number);
+void _add(stack_t **stack, unsigned int line_number);
 
 #endif
