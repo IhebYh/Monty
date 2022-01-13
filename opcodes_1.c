@@ -29,3 +29,17 @@ void _push(stack_t **stack, unsigned int line_number)
 	else
 		_fifo(stack, new_node);
 }
+/**
+ * _pall - print all the values on the stack, starting from the top
+ * @stack: head of the stack
+ * @line_number: line number
+ * Return: void
+ */
+void _pall(stack_t **stack, unsigned int line_number)
+{
+	stack_t *copy = *stack;
+	(void)line_number;
+
+	while (copy->next)
+		printf("%d\n", copy->n);
+}
