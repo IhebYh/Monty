@@ -92,7 +92,13 @@ void error_handler(char *error_msg);
 void (*monty_cmd_handler(void))(stack_t **stack, unsigned int line_number);
 int areDigits(char *num);
 
+
 int inventory_builder(void);
 int line_parser(char *line);
+ 
+/* ------ MEMORY MANAGMENT ----*/
+
+void free_all(void);
+void free_stack(void);
 
 #endif
