@@ -24,7 +24,7 @@ void _push(stack_t **stack, unsigned int line_number)
 	else
 		error_handler(ERROR_PUSH);
 	new_node->n = atoi(num);
-	if (inventory->order == LIFO)
+	if (inventory->order == 1)
 		_lifo(stack, new_node);
 	else
 		_fifo(stack, new_node);
@@ -41,7 +41,7 @@ void _pall(stack_t **stack, unsigned int line_number)
 	(void)line_number;
 
 	for (; copy; copy = copy->next)
-		printf("%d\n", copy->n);
+		fprintf(stdout,"%d\n", copy->n);
 }
 /**
  * _pint - print the number of the head node
@@ -56,5 +56,25 @@ void _pint (stack_t **stack, unsigned int line_number)
 	if (!*stack || !stack)
 		error_handler(ERROR_PINT);
 
-	printf("%d\n", (*stack)->n);
+	fprintf(stdout,"%d\n", (*stack)->n);
+}
+/**
+ * pop - removes the top element of the stack
+ * @stack: head of stack
+ * @line_number: line number
+ * Return: void
+ */
+void _pop(stack_t **stack, unsigned int line_number)
+{
+	stack_t *copy = *stack;
+	(void)line_number;
+
+	if (*stack == NULL)
+		error_handler(ERROR_POP);
+	copy = copy->next;
+	free(*stack);
+	*stack = copy;
+	if (copy != NULL)
+		copy->prev = NULL;
+	free(copy);
 }
