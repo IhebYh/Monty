@@ -32,7 +32,7 @@ void error_handler(int e)
 	else if (e >= 4)
 		dprintf(STDOUT_FILENO, "L%u: %s", n, errors[e]);
 
-	/* free_all();*/
+	free_all();
 
 	exit(EXIT_FAILURE);
 }

@@ -30,6 +30,6 @@ int main(int argc, char *argv[])
 		exec = monty_cmd_handler();
 		exec(&inventory->stack, inventory->linenmbr);
 	}
-	/* TODO : FREE EVERYTHING */
+	free_all();
 	return (EXIT_SUCCESS);
 }
