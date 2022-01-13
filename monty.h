@@ -16,7 +16,6 @@
 #define FIFO 2
 
 /* ------ ERRORS --- */
-
 #define ERROR_MALLOC 0
 #define ERROR_FILE_USAGE 1
 #define ERROR_OPEN_FILE 2
@@ -26,6 +25,11 @@
 #define ERROR_POP 6
 #define ERROR_SWAP 7
 #define ERROR_ADD 8
+#define ERROR_SUB 9
+#define ERROR_DIV 10
+#define ERROR_MUL 11
+
+
 /* ###### STRUCTS ####### */
 
 /**
@@ -111,5 +115,8 @@ void _pop(stack_t **stack, unsigned int line_number);
 void _swap(stack_t **stack, unsigned int line_number);
 void _add(stack_t **stack, unsigned int line_number);
 void _nop(stack_t **stack, unsigned int line_number);
+void _sub(stack_t **stack, unsigned int line_number);
+void _mul(stack_t **stack, unsigned int line_number);
+void _div(stack_t **stack, unsigned int line_number);
 
 #endif

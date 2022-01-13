@@ -27,3 +27,51 @@ void _nop(stack_t **stack, unsigned int line_number)
     (void)stack;
     (void)line_number;
 }
+/**
+ * _sub - subtracts the top two elements of the stack
+ * @stack: headof stack
+ * @line_number:line number
+ * Return: void
+ */
+void _sub(stack_t **stack, unsigned int line_number)
+{
+    int diff;
+
+    if(*stack == NULL || (*stack)->next == NULL)
+        error_handler(ERROR_ADD);
+    diff = (*stack)->n + (*stack)->next->n;
+    _pop(stack, line_number);
+    (*stack)->n = diff;
+}
+/**
+ * _div - divides the top two elements of the stack
+ * @stack: headof stack
+ * @line_number:line number
+ * Return: void
+ */
+void _div(stack_t **stack, unsigned int line_number)
+{
+    int quotient;
+
+    if(*stack == NULL || (*stack)->next == NULL)
+        error_handler(ERROR_ADD);
+    quotient = (*stack)->n + (*stack)->next->n;
+    _pop(stack, line_number);
+    (*stack)->n = quotient;
+}
+/**
+ * _mul - multiplies the top two elements of the stack
+ * @stack: headof stack
+ * @line_number:line number
+ * Return: void
+ */
+void _mul(stack_t **stack, unsigned int line_number)
+{
+    int product;
+
+    if(*stack == NULL || (*stack)->next == NULL)
+        error_handler(ERROR_ADD);
+    product = (*stack)->n + (*stack)->next->n;
+    _pop(stack, line_number);
+    (*stack)->n = product;
+}
