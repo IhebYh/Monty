@@ -29,7 +29,7 @@ void _pchar(stack_t **stack, unsigned int line_number)
 
     if (!stack || !*stack)
         error_handler(ERROR_STACK_EMPTY);
-    if ((*stack)->n < 0 || (*stack)-> > 127)
+    if ((*stack)->n < 0 || (*stack)->n > 127)
         error_handler(ERROR_PCHAR_RANGE);
     printf("%c\n", (*stack)->n);
 }
