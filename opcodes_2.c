@@ -16,3 +16,14 @@ void _add(stack_t **stack, unsigned int line_number)
     _pop(stack, line_number);
     (*stack)->n = sum;
 }
+/**
+ * _nop - doesn't do anything
+ * @stack: headof stack
+ * @line_number:line number
+ * Return: void
+ */
+void _nop(stack_t **stack, unsigned int line_number)
+{
+    (void)stack;
+    (void)line_number;
+}
