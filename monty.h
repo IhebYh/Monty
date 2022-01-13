@@ -13,7 +13,7 @@
 
 #define BUFFSIZE 1024
 #define LIFO 1
-#define FIFO 2
+#define FIFO 0
 
 /* ------ ERRORS --- */
 #define ERROR_MALLOC 0
@@ -29,6 +29,7 @@
 #define ERROR_DIV 10
 #define ERROR_DIV_ZERO 11
 #define ERROR_MUL 12
+#define ERROR_MOD 13
 
 
 /* ###### STRUCTS ####### */
@@ -119,5 +120,6 @@ void _nop(stack_t **stack, unsigned int line_number);
 void _sub(stack_t **stack, unsigned int line_number);
 void _mul(stack_t **stack, unsigned int line_number);
 void _div(stack_t **stack, unsigned int line_number);
+void _mod(stack_t **stack, unsigned int line_number);
 
 #endif

@@ -24,7 +24,7 @@ void _push(stack_t **stack, unsigned int line_number)
 	else
 		error_handler(ERROR_PUSH);
 	new_node->n = atoi(num);
-	if (inventory->order == 1)
+	if (inventory->order == LIFO)
 		_lifo(stack, new_node);
 	else
 		_fifo(stack, new_node);
