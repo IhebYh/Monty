@@ -27,7 +27,8 @@
 #define ERROR_ADD 8
 #define ERROR_SUB 9
 #define ERROR_DIV 10
-#define ERROR_MUL 11
+#define ERROR_DIV_ZERO 11
+#define ERROR_MUL 12
 
 
 /* ###### STRUCTS ####### */
