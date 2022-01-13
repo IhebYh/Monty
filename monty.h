@@ -30,6 +30,8 @@
 #define ERROR_DIV_ZERO 11
 #define ERROR_MUL 12
 #define ERROR_MOD 13
+#define ERROR_STACK_EMPTY 14
+#define ERROR_PCHAR_RANGE 15
 
 
 /* ###### STRUCTS ####### */
@@ -121,5 +123,7 @@ void _sub(stack_t **stack, unsigned int line_number);
 void _mul(stack_t **stack, unsigned int line_number);
 void _div(stack_t **stack, unsigned int line_number);
 void _mod(stack_t **stack, unsigned int line_number);
+void _pstr(stack_t **stack, unsigned int line_number);
+void _pchar(stack_t **stack, unsigned int line_number);
 
 #endif
